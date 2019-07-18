@@ -8,6 +8,10 @@ keys:
 folders:
     - map: /Users/mtaylor/Development/GIT/wmcp-laravel/src
       to: /home/vagrant/code/src/
+      type: "rsync"
+      options:
+          rsync__args: ["--verbose", "--archive", "--delete", "-zz"]
+          rsync__exclude: ["node_modules"]
 sites:
     - map: wmcp-laravel.local
       to: /home/vagrant/code/src/public
