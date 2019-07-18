@@ -12,9 +12,17 @@ folders:
       options:
           rsync__args: ["--verbose", "--archive", "--delete", "-zz"]
           rsync__exclude: ["node_modules"]
+    - map: /Users/mtaylor/Development/GIT/wmcp-laravel/api
+      to: /home/vagrant/code/api/
+      type: "rsync"
+      options:
+          rsync__args: ["--verbose", "--archive", "--delete", "-zz"]
+          rsync__exclude: ["node_modules"]
 sites:
     - map: wmcp-laravel.local
       to: /home/vagrant/code/src/public
+    - map: wmcp-api.local
+      to: /home/vagrant/code/api/public
 variables:
     - key: APP_ENV
       value: local
